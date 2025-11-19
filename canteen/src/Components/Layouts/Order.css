@@ -1,0 +1,18 @@
+.order-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.order-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order-button:hover {
+  background-color: #218838;
+}
