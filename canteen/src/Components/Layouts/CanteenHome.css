@@ -1,0 +1,19 @@
+.canteen-home {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-info {
+  margin-top: 20px;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-info ul {
+  list-style-type: none;
+}
+
+.home-info ul li {
+  font-size: 18px;
+}
