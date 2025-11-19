@@ -1,0 +1,10 @@
+.banner {
+  height: 250px;
+  background: linear-gradient(to right, #0d6efd, #6610f2);
+}
+
+.card img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
