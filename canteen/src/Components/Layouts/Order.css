@@ -6,13 +6,13 @@
 .order-button {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #28a745;
-  color: white;
+  background-color: #e6d2d2;
+  color: rgb(219, 146, 146);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .order-button:hover {
-  background-color: #218838;
+  background-color: #22bb43;
 }
