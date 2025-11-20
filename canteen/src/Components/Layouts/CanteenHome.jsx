@@ -4,6 +4,7 @@ import './CanteenHome.css';
 const CanteenHome = () => {
   return (
     <div className="canteen-home">
+      
       <h2>Welcome to the Canteen</h2>
       <p>Browse the menu and place your order with ease.</p>
       <div className="home-info">
