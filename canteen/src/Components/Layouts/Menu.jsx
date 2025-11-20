@@ -27,10 +27,16 @@ const Menu = () => {
         <ul className="food-list">
           {foodItems.map(item => (
             <li key={item.id} className="food-item">
-              {item.img && <img src={item.img} alt={item.name} className="food-img" />}
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <p><strong>Price: ${item.price}</strong></p>
+              <div className="food-item-left">
+                {item.img && <img src={item.img} alt={item.name} className="food-img" />}
+              </div>
+              <div className="food-item-middle">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+              </div>
+              <div className="food-item-right">
+                <p className="price"><strong>${item.price}</strong></p>
+              </div>
             </li>
           ))}
         </ul>
