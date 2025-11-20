@@ -1,33 +1,70 @@
+/* Navbar Container */
 .navbar {
-  background-color: #333;
-  padding: 10px;
-  color: white;
+  background-color: #03062e; /* Deep Blue background */
+  padding: 12px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white; /* Text color */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* Logo */
 .navbar .logo {
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFD700; /* Golden logo color */
 }
 
+/* Navigation Menu */
 .navbar nav ul {
   list-style: none;
+  display: flex;
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
 
-.navbar nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
+/* Menu Items */
 .navbar nav ul li a {
-  color: white;
+  color: #FFFFFF; /* White text */
   text-decoration: none;
   font-size: 18px;
+  transition: all 0.3s ease;
 }
 
+/* Hover Effect */
 .navbar nav ul li a:hover {
+  color: #FF7D39; /* Orange hover color */
   text-decoration: underline;
+}
+
+/* Login / CTA Button */
+.navbar .login-btn {
+  padding: 8px 20px;
+  background-color: #FF7D39; /* Orange button */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navbar .login-btn:hover {
+  background-color: #ff5e00; /* Darker orange on hover */
+}
+
+/* Responsive (Mobile) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .navbar nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
 }
