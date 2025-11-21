@@ -17,3 +17,14 @@
 .home-info ul li {
   font-size: 18px;
 }
+
+
+
+.home-row {
+  display: flex;
+  align-items: center;
+}
+
+.home-left, .home-right {
+  flex: 1;
+}
