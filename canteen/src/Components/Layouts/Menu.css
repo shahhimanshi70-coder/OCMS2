@@ -58,3 +58,19 @@
   margin: 0;
   color: #27ae60;
 }
+
+
+.order-btn {
+  background-color: #d15a2f;
+  color: rgb(243, 233, 233);
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.order-btn:hover {
+  background-color: #ffb199;
+}
