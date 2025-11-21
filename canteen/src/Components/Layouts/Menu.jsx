@@ -22,6 +22,7 @@ const Menu = () => {
 
   return (
     <div className="menu-page">
+
       <h2>Our Menu</h2>
       {foodItems.length > 0 ? (
         <ul className="food-list">
@@ -43,6 +44,19 @@ const Menu = () => {
       ) : (
         <p>Loading menu...</p>
       )}
+
+
+
+
+
+      
+ < button 
+        className="order-btn"
+        onClick={() => navigate('/order')}
+      >
+        Go to Order Page
+      </button>
+      
     </div>
   );
 };
