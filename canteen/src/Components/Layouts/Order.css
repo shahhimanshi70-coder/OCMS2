@@ -16,3 +16,40 @@
 .order-button:hover {
   background-color: #22bb43;
 }
+
+.menu-link-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6b6b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.menu-link-button:hover {
+  background-color: #ff5252;
+}
+
+.contact-link-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.contact-link-button:hover {
+  background-color: #2e5dd1;
+}

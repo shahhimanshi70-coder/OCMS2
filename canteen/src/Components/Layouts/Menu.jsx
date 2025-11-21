@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Menu.css';
 import img2 from '../../assets/img/img2.jpg';
 import img3 from '../../assets/img/img3.jpg';
@@ -45,17 +46,9 @@ const Menu = () => {
         <p>Loading menu...</p>
       )}
 
-
-
-
-
-      
- < button 
-        className="order-btn"
-        onClick={() => navigate('/order')}
-      >
+      <Link to="/order" className="order-btn">
         Go to Order Page
-      </button>
+      </Link>
       
     </div>
   );
