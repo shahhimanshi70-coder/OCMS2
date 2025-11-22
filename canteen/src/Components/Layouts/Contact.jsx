@@ -51,7 +51,11 @@ const Contact = () => {
       <h2>Contact Us</h2>
       <p>If you have any questions, feel free to contact us!</p>
       
-      {message && <p className="status-message">{message}</p>}
+      {message && (
+        <p className={`status-message ${message.includes('✅') ? 'success' : 'error'}`}>
+          {message}
+        </p>
+      )}
       
       <form onSubmit={handleSubmit}>
         <label>
