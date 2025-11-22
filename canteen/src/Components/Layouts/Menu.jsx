@@ -6,6 +6,14 @@ import { menuAPI } from '../../services/api';
 const Menu = () => {
   const [foodItems, setFoodItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showMessage, setShowMessage] = useState(false);
+
+  useEffect(() => {
+    // Show "Menu already opened!" message on component mount
+    setShowMessage(true);
+    const timer = setTimeout(() => setShowMessage(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const fetchMenuItems = async () => {
@@ -26,6 +34,7 @@ const Menu = () => {
     <div className="menu-page">
 
       <h2>Our Menu</h2>
+      {showMessage && <p className="menu-opened-msg">📖 Menu already opened!</p>}
       {loading ? (
         <p>Loading menu...</p>
       ) : foodItems.length > 0 ? (
