@@ -3,6 +3,17 @@
   padding: 20px;
 }
 
+.menu-opened-msg {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  padding: 12px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-left: 4px solid #1565c0;
+  display: inline-block;
+}
+
 .food-list {
   list-style-type: none;
   padding: 0;
