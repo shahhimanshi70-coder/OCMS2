@@ -5,6 +5,7 @@ import CanteenHome from './CanteenHome';
 import Menu from './Menu'; 
 import Order from './Order'; 
 import Contact from './Contact';
+import AdminUpload from './AdminUpload';
 import './App.css'; 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/menu" element={<Menu />} />  
           <Route path="/order" element={<Order />} /> 
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin/upload" element={<AdminUpload />} />
           <Route path="/Navbar" element={<Navbar/>} />
 
         </Routes>

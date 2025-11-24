@@ -35,14 +35,15 @@ export const menuAPI = {
     }
   },
 
-  // Create menu item (Admin only)
+  // Create menu item (Admin only) - supports FormData for image upload
   create: async (data) => {
     try {
+      const isFormData = data instanceof FormData;
       const response = await fetch(`${API_BASE_URL}/menu/items/`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: isFormData ? {} : { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify(data)
+        body: isFormData ? data : JSON.stringify(data)
       });
       return await handleResponse(response);
     } catch (error) {
@@ -51,14 +52,37 @@ export const menuAPI = {
     }
   },
 
-  // Update menu item (Admin only)
+  // Create menu item with image (Admin only)
+  createWithImage: async (name, description, price, image) => {
+    try {
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('description', description);
+      formData.append('price', price);
+      if (image) {
+        formData.append('image', image);
+      }
+      const response = await fetch(`${API_BASE_URL}/menu/items/`, {
+        method: 'POST',
+        credentials: 'include',
+        body: formData
+      });
+      return await handleResponse(response);
+    } catch (error) {
+      console.error('Error creating menu item with image:', error);
+      return null;
+    }
+  },
+
+  // Update menu item (Admin only) - supports FormData for image upload
   update: async (id, data) => {
     try {
+      const isFormData = data instanceof FormData;
       const response = await fetch(`${API_BASE_URL}/menu/items/${id}/`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: isFormData ? {} : { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify(data)
+        body: isFormData ? data : JSON.stringify(data)
       });
       return await handleResponse(response);
     } catch (error) {
