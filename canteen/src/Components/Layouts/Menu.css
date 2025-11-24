@@ -32,6 +32,14 @@
   gap: 20px;
 }
 
+.food-item.featured-item {
+  background: linear-gradient(135deg, ffb199;);
+  border: 3px solid #d8cdda;
+  box-shadow: 0 4px 20px rgba(255, 125, 57, 0.3);
+  transform: scale(1.02);
+  margin: 20px 0;
+}
+
 .food-item-left {
   flex-shrink: 0;
 }

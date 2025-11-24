@@ -35,54 +35,50 @@ export const menuAPI = {
     }
   },
 
-  // Create menu item (Admin only) - supports FormData for image upload
-  create: async (data) => {
+  // Create menu item with image (Admin only)
+  create: async (formData) => {
     try {
-      const isFormData = data instanceof FormData;
+      // If it's already FormData, use it directly; otherwise convert
+      const body = formData instanceof FormData ? formData : JSON.stringify(formData);
+      const headers = formData instanceof FormData ? {} : { 'Content-Type': 'application/json' };
+      
       const response = await fetch(`${API_BASE_URL}/menu/items/`, {
         method: 'POST',
-        headers: isFormData ? {} : { 'Content-Type': 'application/json' },
+        headers,
         credentials: 'include',
-        body: isFormData ? data : JSON.stringify(data)
+        body
       });
       return await handleResponse(response);
     } catch (error) {
       console.error('Error creating menu item:', error);
-      return null;
+      throw error;
     }
   },
 
-  // Create menu item with image (Admin only)
-  createWithImage: async (name, description, price, image) => {
+  // Create menu item with image (for AdminUpload component)
+  createWithImage: async (formData) => {
     try {
-      const formData = new FormData();
-      formData.append('name', name);
-      formData.append('description', description);
-      formData.append('price', price);
-      if (image) {
-        formData.append('image', image);
-      }
       const response = await fetch(`${API_BASE_URL}/menu/items/`, {
         method: 'POST',
+        // Don't set Content-Type header - browser will set it with boundary
         credentials: 'include',
         body: formData
       });
       return await handleResponse(response);
     } catch (error) {
-      console.error('Error creating menu item with image:', error);
-      return null;
+      console.error('Error uploading menu item:', error);
+      throw error;
     }
   },
 
-  // Update menu item (Admin only) - supports FormData for image upload
+  // Update menu item (Admin only)
   update: async (id, data) => {
     try {
-      const isFormData = data instanceof FormData;
       const response = await fetch(`${API_BASE_URL}/menu/items/${id}/`, {
         method: 'PUT',
-        headers: isFormData ? {} : { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: isFormData ? data : JSON.stringify(data)
+        body: JSON.stringify(data)
       });
       return await handleResponse(response);
     } catch (error) {

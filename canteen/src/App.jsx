@@ -7,6 +7,7 @@ import Order from './Components/Layouts/Order';
 import Contact from './Components/Layouts/Contact';
 import './App.css'; 
 import Login from './Components/Layouts/Login';
+import AdminUpload from './Components/Layouts/AdminUpload';
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/navbar" element={<Navbar/>} />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin/upload" element={<AdminUpload />} />
 
         </Routes>
       </div>
