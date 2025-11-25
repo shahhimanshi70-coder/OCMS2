@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css';
 import { menuAPI } from '../../services/api';
-import img4 from '../../assets/img/img4.jpg';
 
 const Menu = () => {
   const [foodItems, setFoodItems] = useState([]);
@@ -40,28 +39,14 @@ const Menu = () => {
         <p>Loading menu...</p>
       ) : foodItems.length > 0 ? (
         <ul className="food-list">
-          {/* Featured Sandwich */}
-          <li className="food-item featured-item">
-            <div className="food-item-left">
-              <img src={img4} alt="Deluxe Sandwich" className="food-img" />
-              </div>
-            <div className="food-item-middle">
-              <h3>🥪 Deluxe Sandwich</h3>
-              <p>Fresh sandwich with premium ingredients, crispy bread, and special sauce</p>
-            </div>
-            <div className="food-item-right">
-              <p className="price"><strong>40</strong></p>
-            </div>
-          </li>
-
           {foodItems.map(item => (
             <li key={item.id} className="food-item">
               <div className="food-item-left">
-                {item.image && <img src={item} alt={item.name} className="food-img" />}
+                {item.image && <img src={item.image} alt={item.name} className="food-img" />}
               </div>
               <div className="food-item-middle">
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
+                <h3>{item.name.replace('Sandwich', 'Chaa')}</h3>
+                <p>{item.name.includes('Sandwich') || item.name.includes('tea') ? "A warm, aromatic cup of spiced Chaa to refresh and comfort every sip." : item.description}</p>
               </div>
               <div className="food-item-right">
                 <p className="price"><strong>${item.price}</strong></p>
